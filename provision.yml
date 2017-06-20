@@ -1,0 +1,15 @@
+---
+- hosts: node0
+  become: yes
+  user: vagrant
+  tasks:
+    - name: Setup nginx
+      command: "docker pull xavijs/nginx-basic-auth"
+    - name: Create Service nginx
+      command: "docker service create --name nginx -p 8081:80 -p 80:80 --replicas 1 xavijs/nginx-basic-auth"
+
+    - name: Setup portainer
+      command: "docker pull portainer/portainer"
+    - name: Create Service portainer
+      command: "docker service create --name portainer --publish 9000:9000 --constraint 'node.role == manager' --mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock portainer/portainer -H unix:///var/run/docker.sock"
+      

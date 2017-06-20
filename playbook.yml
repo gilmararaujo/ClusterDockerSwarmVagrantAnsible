@@ -1,0 +1,23 @@
+---
+- hosts: docker-nodes
+  become: true
+  vars:
+    pri_domain_name: 'test.vagrant.local'
+  roles:
+    - role: ansible-docker
+  tasks:
+    - name: Installing Packages
+      apt:
+        name: "{{ item }}"
+        state: "present"
+      with_items:
+        - 'redis-tools'
+      when: ansible_os_family == "Debian"
+
+- hosts: docker-nodes
+  become: true
+  vars:
+    pri_domain_name: 'prod.vagrant.local'
+  roles:
+    - role: ansible-docker-swarm
+  tasks:

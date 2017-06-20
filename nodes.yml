@@ -1,0 +1,106 @@
+---
+- name: 'node0'
+  ansible_groups:
+    - 'docker-nodes'
+    - 'docker-swarm-managers'
+  box: 'ubuntu/xenial64'
+  desktop: false
+
+  interfaces:
+    - ip: '192.168.56.100'
+      auto_config: true
+      method: 'static'
+
+  mem: '512'
+  vcpu: '1'
+
+- name: 'node1'
+  ansible_groups:
+    - 'docker-nodes'
+    - 'docker-swarm-managers'
+  box: 'ubuntu/xenial64'
+  desktop: false
+
+  interfaces:
+    - ip: '192.168.56.101'
+      auto_config: true
+      method: 'static'
+
+  mem: '512'
+  vcpu: '1'
+
+- name: 'node2'
+  ansible_groups:
+    - 'docker-nodes'
+    - 'docker-swarm-managers'
+  box: 'ubuntu/xenial64'
+  desktop: false
+
+  interfaces:
+    - ip: '192.168.56.102'
+      auto_config: true
+      method: 'static'
+
+  mem: '512'
+  vcpu: '1'
+
+- name: 'node3'
+  ansible_groups:
+    - 'docker-nodes'
+    - 'docker-swarm-workers'
+  box: 'ubuntu/xenial64'
+  desktop: false
+
+  interfaces:
+    - ip: '192.168.56.103'
+      auto_config: true
+      method: 'static'
+
+  mem: '512'
+  vcpu: '1'
+
+- name: 'node4'
+  ansible_groups:
+    - 'docker-nodes'
+    - 'docker-swarm-workers'
+  box: 'ubuntu/xenial64'
+  desktop: false
+
+  interfaces:
+    - ip: '192.168.56.104'
+      auto_config: true
+      method: 'static'
+
+  mem: '512'
+  vcpu: '1'
+ 
+- name: 'node5'
+  ansible_groups:
+    - 'docker-nodes'
+    - 'docker-swarm-workers'
+  box: 'ubuntu/xenial64'
+  desktop: false
+
+  interfaces:
+    - ip: '192.168.56.105'
+      auto_config: true
+      method: 'static'
+  
+  mem: '512'
+  vcpu: '1'
+ 
+- name: 'node6'
+  ansible_groups:
+    - 'docker-nodes'
+    - 'docker-swarm-workers'
+  box: 'ubuntu/xenial64'
+  desktop: false
+
+  interfaces:
+    - ip: '192.168.56.106'
+      auto_config: true
+      method: 'static'
+
+  mem: '512'
+  vcpu: '1'
+ 
